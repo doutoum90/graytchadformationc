@@ -1,6 +1,6 @@
-## formation en langage c en langue tchadienne
+# formation en langage c en langue tchadienne
 
 
-# Leçon1: 
+## Leçon1: 
 
-# Leçon2:
+## Leçon2:
