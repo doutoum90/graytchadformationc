@@ -7,3 +7,4 @@
 ## [Leçon 4: Les variables  (suite)](docs/lecon4.md)
 ## [Leçon 5: Les Les operations sur les types prédefinies](docs/lecon5.md)
 ## [Leçon 6: Les Structures conditionnels](docs/lecon6.md)
+## [Leçon 7: Les Entrées et sorties et Atelier](docs/lecon7.md)
