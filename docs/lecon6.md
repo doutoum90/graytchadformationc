@@ -1,21 +1,26 @@
 # Leçon C 6
+
 ## Les Structures conditionnels
 
 ### 1 - Si, si-sinon, si-sinonsi-sinon, si-sinonsi-...sinon
 
-```c
+``` c
 if ( expression ) {
 	instruction
 }
 ```
 
-
 si condition1 
+
 	execute une liste d'instruction
+
 sinon condtion2
-	execute
+
+	execute 
+
 ou 
-```c
+
+``` c
 if ( expression-1 ) 
 	instruction-1
 else if ( expression-2 ) 
@@ -26,8 +31,10 @@ else if ( expression-n )
 else
 	instruction-n+1
 ```
+
 ou encore
-```c
+
+``` c
 if ( expression-1 ) {
 	bloc d'instruction-1
 }
@@ -43,10 +50,9 @@ else{
 }
 ```
 
-
 ### 2- switch - case - break -default - default
 
-```c
+``` c
 switch ( expression ) {
 	case constante-1:{
 		liste d’instructions 1
@@ -70,4 +76,5 @@ switch ( expression ) {
 ```
 
 ### 3 IX- L’opérateur conditionnel ternaire
-m = condition ? valeur1 : valeur2;
+
+m = condition ? valeur1 : valeur2; 

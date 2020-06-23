@@ -1,6 +1,5 @@
 # Langage C 1
 
-
 Date : 1972
 Auteur : Dennis Ritchie et Ken Thompson
 Impératif, procedural et Compilé.
@@ -14,10 +13,12 @@ Impératif, procedural et Compilé.
 | haut niveau | bas niveau |
 
 Compilateur: 
-- mingw 
-- cygwin
-- gcc
+
+* mingw 
+* cygwin
+* gcc
 
 exemple d'utilisation : 
-- les systèmes embarqués principalement les drones.
-- le noyau linux
+
+* les systèmes embarqués principalement les drones.
+* le noyau linux

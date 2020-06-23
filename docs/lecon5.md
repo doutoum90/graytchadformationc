@@ -1,9 +1,12 @@
-
 # Leçon C 5
+
 ## Les operations 
+
 ### I- (=)L’affectation
  
+
 ### II- arithmétiques
+
  
 1-(+) addition
 2- (-)soustraction
@@ -52,8 +55,7 @@
 
 1- ++
 2- --
+
 ### VIII- L’opérateur virgule
 
-
 ### IX- L’opérateur conditionnel ternaire
-
