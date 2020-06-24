@@ -10,3 +10,4 @@
 ## [Leçon 7: Les Entrées et sorties et Atelier](docs/lecon7.md)
 ## [Leçon 8: Les Structures itératifs](docs/lecon8.md)
 ## [Leçon 9: Les fonctions et procedures](docs/lecon9.md)
+## [Leçon 10: Programmation modulaire](docs/lecon10.md)
