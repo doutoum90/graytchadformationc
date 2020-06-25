@@ -11,4 +11,5 @@
 ## [Leçon 8: Les Structures itératifs](docs/lecon8.md)
 ## [Leçon 9: Les fonctions et procedures](docs/lecon9.md)
 ## [Leçon 10: Programmation modulaire](docs/lecon10.md)
-## [Leçon 11:  Les pointeurs](docs/lecon11.md)
+## [Leçon 11: Les pointeurs](docs/lecon11.md)
+## [Leçon 12: Les tableaux](docs/lecon12.md)
