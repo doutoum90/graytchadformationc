@@ -14,3 +14,5 @@
 ## [Leçon 11: Les pointeurs](docs/lecon11.md)
 ## [Leçon 12: Les tableaux](docs/lecon12.md)
 ## [Leçon 13: Les chaines de caractères](docs/lecon13.md)
+## [Leçon 14: Gestion de la mémoire : Allocation dynamique](docs/lecon14.md)
+## [Leçon 15: Les fichiers : entrées/sorties](docs/lecon15.md)
