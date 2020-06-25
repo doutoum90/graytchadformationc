@@ -13,3 +13,4 @@
 ## [Leçon 10: Programmation modulaire](docs/lecon10.md)
 ## [Leçon 11: Les pointeurs](docs/lecon11.md)
 ## [Leçon 12: Les tableaux](docs/lecon12.md)
+## [Leçon 13: Les chaines de caractères](docs/lecon13.md)
