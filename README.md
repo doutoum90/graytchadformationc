@@ -16,3 +16,5 @@
 ## [Leçon 13: Les chaines de caractères](docs/lecon13.md)
 ## [Leçon 14: Gestion de la mémoire : Allocation dynamique](docs/lecon14.md)
 ## [Leçon 15: Les fichiers : entrées/sorties](docs/lecon15.md)
+## [Leçon 16: Les structures : definir de son type](docs/lecon16.md)
+## [Leçon 17: Organisation d'un projet et makefile](docs/lecon17.md)
