@@ -1,0 +1,1 @@
+void afficherMessage(char *chaine);
