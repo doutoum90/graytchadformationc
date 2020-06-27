@@ -19,3 +19,6 @@
 ## [Leçon 16: Les structures : definir de son type](docs/lecon16.md)
 ## [Leçon 17: Organisation d'un projet et makefile](docs/lecon17.md)
 ## [Leçon 18: La récursivité](docs/lecon18.md)
+## [Leçon 19: Les prépocesseurs](docs/lecon19.md)
+
+

@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include "fonctions.h"
 
+
 int main()
 {
 
     unsigned n;
 
+    printf("%f\n", pi);
+    printf("%u\n", SURFACE(2,3));
+    AFFICHER("Bonjour");
     printf("saisir la valeur de n\n");
     scanf("%u", &n);
     printf("%u!=%u\n", n, factoriel(n));
