@@ -20,5 +20,6 @@
 ## [Leçon 17: Organisation d'un projet et makefile](docs/lecon17.md)
 ## [Leçon 18: La récursivité](docs/lecon18.md)
 ## [Leçon 19: Les préprocesseurs](docs/lecon19.md)
+## [Leçon 20: Les structures de données: Introduction](docs/lecon20.md)
 
 
