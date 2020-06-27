@@ -1,5 +1,5 @@
 # Leçon C 18
-## Les prédécesseurs
+## Les préprocesseurs
 
 ### Importation des bibliothèques 
 * Utilisateurs
