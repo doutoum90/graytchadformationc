@@ -18,3 +18,4 @@
 ## [Leçon 15: Les fichiers : entrées/sorties](docs/lecon15.md)
 ## [Leçon 16: Les structures : definir de son type](docs/lecon16.md)
 ## [Leçon 17: Organisation d'un projet et makefile](docs/lecon17.md)
+## [Leçon 18: La récursivité](docs/lecon18.md)
