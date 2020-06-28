@@ -53,7 +53,6 @@ A-->B;
 B-->C;
 C-->D;
 D-->E;
-pt_fin -->E;
 ```
 **Les Liste (DList) doublement chainées**
 ```mermaid
