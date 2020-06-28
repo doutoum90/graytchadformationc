@@ -24,7 +24,7 @@ Exemple
 	* pop (suppression du dernier element ajouté)
 	* ....
 
-[**Les Files (Queue) à sens unique**](https://fr.wikipedia.org/wiki/File_(structure_de_données))
+[**Les Files(Queue)**](https://fr.wikipedia.org/wiki/File_(structure_de_données))
 
 FIFO: First In First Out
 ```mermaid
@@ -45,7 +45,17 @@ Exemple
 	* dequeue (suppression du premier element ajouté)
 	* ....
 
-**Les Files (Queue) à double sens **
+**Les Listes chainées (List)**
+```mermaid
+graph LR; 
+pt_debut-->A
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+pt_fin -->E;
+```
+**Les Liste (DList) doublement chainées**
 ```mermaid
 graph LR; 
 pt_debut-->A

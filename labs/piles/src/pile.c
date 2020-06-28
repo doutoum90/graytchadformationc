@@ -27,7 +27,8 @@ Booleen estPileVide(Pile pile)
 Pile empiler(Pile pile, unsigned nombre)
 {
     ElementPile *element = malloc(sizeof(*element));
-    if(element==NULL){
+    if (element == NULL)
+    {
         fprintf(stderr, "L'allocation de la memoire n'a pas reussi");
         exit(EXIT_FAILURE);
     }
@@ -38,10 +39,11 @@ Pile empiler(Pile pile, unsigned nombre)
 
 void afficherElement(Pile pile)
 {
-    if(estPileVide(pile)== VRAI){
+    if (estPileVide(pile) == VRAI)
+    {
         printf("la pile est vide\n");
     }
-    
+
     while (estPileVide(pile) == FAUX)
     {
         printf("[%u]\n", pile->valeur);
@@ -51,8 +53,13 @@ void afficherElement(Pile pile)
 
 Pile depiler(Pile pile)
 {
-    Pile temp = pile;
-    pile = pile->suivant;
-    free(temp);
-    return pile;
+    if (estPileVide(pile) == VRAI)
+        fprintf(stderr, "impossible de depiler une pile vide\n");
+    else
+    {
+        Pile temp = pile;
+        pile = pile->suivant;
+        free(temp);
+        return pile;
+    }
 }
