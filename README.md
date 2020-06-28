@@ -22,6 +22,6 @@
 ## [Leçon 19: Les préprocesseurs](docs/lecon19.md)
 ## [Leçon 20: Les structures de données: Introduction](docs/lecon20.md)
 ## [Leçon 21: Les structures de données: Les Piles (Stack)](docs/lecon21.md)
-## [Leçon 22: Les structures de données: [Les Files (Queue)](docs/lecon22.md)
+## [Leçon 22: Les structures de données: Les Files (Queue)](docs/lecon22.md)
 
 
