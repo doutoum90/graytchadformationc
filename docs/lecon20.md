@@ -57,12 +57,12 @@ D-->E;
 **Les Liste (DList) doublement chainées**
 ```mermaid
 graph LR; 
-pt_debut-->A
+pt_debut-->A;
 A-->B; B-->A;
 B-->C; C-->B;
 C-->D; D-->C;
 D-->E;E-->D;
-pt_fin -->E;
+pt_debut -->E;
 ```
 
 **Les arbres (Trees)**
@@ -122,8 +122,8 @@ exemple
 	* ....
 
 
-### Type d'objet
+### Type de données Abstrait(TDA)
 possibilité de créer plusieurs elements du Type en question.
 
-### Objet.
+### Objet Abstrait.
 Possibilité de créer un seul objet du type defini.
