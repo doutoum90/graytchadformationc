@@ -147,6 +147,7 @@ DListe supprimerPremierElement(DListe l)
     Noeud t = l->debut;
     l->debut = l->debut->suivant;
     l->debut->precedant = NULL;
+    l->nbElement--;
     free(t);
     return l;
 }
@@ -162,6 +163,7 @@ DListe supprimerDernierElement(DListe l)
     Noeud t = l->fin;
     l->fin = l->fin->precedant;
     l->fin->suivant = NULL;
+    l->nbElement--;
     free(t);
     return l;
 }

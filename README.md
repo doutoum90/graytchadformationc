@@ -25,3 +25,4 @@
 ## [Leçon 22: Les structures de données: Les Files (Queue)](docs/lecon22.md)
 ## [Leçon 23: Les structures de données: Les Listes chainées (List)](docs/lecon23.md)
 ## [Leçon 24: Les structures de données: Les Listes doublement chainées (DList)](docs/lecon24.md)
+## [Leçon 25: Les structures de données: Les arbres binaires (Binary Trees )](docs/lecon25.md)

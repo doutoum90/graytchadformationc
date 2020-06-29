@@ -1,5 +1,5 @@
-#ifndef __FILE__H__
-#define __FILE__H__
+#ifndef __DLIST__H__
+#define __DLIST__H__
 
 /**************** définition des types ********/
 
