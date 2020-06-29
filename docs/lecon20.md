@@ -62,7 +62,7 @@ A-->B; B-->A;
 B-->C; C-->B;
 C-->D; D-->C;
 D-->E;E-->D;
-pt_debut -->E;
+pt_fin -->E;
 ```
 
 **Les arbres (Trees)**
@@ -121,9 +121,8 @@ exemple
 	* parcours Euleriens
 	* ....
 
-
 ### Type de données Abstrait(TDA)
-possibilité de créer plusieurs elements du Type en question.
+Possibilité de créer plusieurs elements du Type en question.
 
 ### Objet Abstrait.
 Possibilité de créer un seul objet du type defini.

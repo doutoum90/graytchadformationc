@@ -23,4 +23,5 @@
 ## [Leçon 20: Les structures de données: Introduction](docs/lecon20.md)
 ## [Leçon 21: Les structures de données: Les Piles (Stack)](docs/lecon21.md)
 ## [Leçon 22: Les structures de données: Les Files (Queue)](docs/lecon22.md)
-## [Leçon 23:  Les structures de données: Les Listes chainées (List)](docs/lecon23.md)
+## [Leçon 23: Les structures de données: Les Listes chainées (List)](docs/lecon23.md)
+## [Leçon 24: Les structures de données: Les Listes doublement chainées (DList)](docs/lecon24.md)
