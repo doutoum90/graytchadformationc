@@ -3,54 +3,81 @@
 #include <stdbool.h>
 #include <time.h>
 
-#include <SDL2/SDL.h>
-
 #include "utilitaire.h"
 int main()
 {
     SDL_Window *fenetre = NULL;
     SDL_Renderer *rendu = NULL;
     // charger le contexte
-    LoggerMessageErreur(SDL_Init(SDL_INIT_VIDEO) != 0, SDL_GetError());
-    /*  // création de la fenetre
-    fenetre = SDL_CreateWindow("Lalekou Giray Tchad", COORDONNES_X, COORDONNES_Y, LARGEUR_FENETRE, HAUTEUR_FENETRE, SDL_WINDOW_OPENGL);
-    LoggerMessageErreur(fenetre == NULL, SDL_GetError());
-
-    // création du container
-    rendu = SDL_CreateRenderer(fenetre, -1, SDL_RENDERER_SOFTWARE);
-    LoggerMessageErreur(rendu == NULL, SDL_GetError()); */
+    LoggerMessageErreur(
+        SDL_Init(SDL_INIT_VIDEO) != 0,
+        "Erreur de chargement de contexte");
     // création de la fenetre et du container
     LoggerMessageErreur(
-        SDL_CreateWindowAndRenderer(LARGEUR_FENETRE, 
-            HAUTEUR_FENETRE, 
-            SDL_WINDOW_OPENGL, 
-            &fenetre, 
-            &rendu) != 0,
-        SDL_GetError());
+        SDL_CreateWindowAndRenderer(LARGEUR_FENETRE,
+                                    HAUTEUR_FENETRE,
+                                    SDL_WINDOW_OPENGL,
+                                    &fenetre,
+                                    &rendu) != 0,
+        "Erreur de creation de la fenetre ou du container");
+
+    // creation de la surface (objet contenant l'image)
+    SDL_Surface *image = SDL_LoadBMP("src/gray.bmp");
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              image == NULL,
+                              "Erreur chargement image");
+    // creation de la texture(parent de la surface)
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(rendu, image);
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              texture == NULL,
+                              "Erreur de la création texture en memoire");
+    // charger la texture en memoire
+    int largeur, hauteur;
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_QueryTexture(texture,
+                                               NULL,
+                                               NULL,
+                                               &largeur,
+                                               &hauteur) != 0,
+                              "Erreur chargement texture en memoire");
+
+    // affichage de la texture
+    SDL_Rect rect = {(LARGEUR_FENETRE - largeur) / 2, (HAUTEUR_FENETRE - hauteur) / 2, largeur, hauteur};
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_RenderCopy(rendu,
+                                             texture,
+                                             NULL,
+                                             &rect) != 0,
+                              "Erreur d'affichage de la texture");
 
     // indiquer la couleur
-    LoggerMessageErreur(
-        SDL_SetRenderDrawColor(rendu, 
-        255, 
-        255, 
-        255, 
-        255) != 0, 
-        SDL_GetError());
+    /*     detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_SetRenderDrawColor(rendu,
+                                                     255,
+                                                     255,
+                                                     255,
+                                                     255) != 0,
+                              "Erreur de changement de couleur pour le dessin"); */
+    /* 
+    SDL_Rect marectangle1 = {200, 300, 200, 100};
+    SDL_Rect marectangle2 = {500, 300, 200, 100};
 
-    SDL_Rect marectangle1;
-    marectangle1.h = 100;
-    marectangle1.w = 200;
-    marectangle1.x = 200;
-    marectangle1.y = 300;
-    SDL_Rect marectangle2;
-    marectangle2.h = 100;
-    marectangle2.w = 200;
-    marectangle2.x = 500;
-    marectangle2.y = 200;
-    // dessiner un rectangle
-    LoggerMessageErreur(SDL_RenderFillRect(rendu, &marectangle1) != 0, SDL_GetError());
-    LoggerMessageErreur(SDL_RenderDrawRect(rendu, &marectangle2) != 0, SDL_GetError());
-
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_RenderFillRect(rendu,
+                                                 &marectangle1) != 0,
+                              "Erreur de création du rectangle rempli");
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_RenderDrawRect(rendu,
+                                                 &marectangle2) != 0,
+                              "Erreur de création du rectangle");
+ */
     SDL_RenderPresent(rendu);
     bool etatDemarre = true;
     SDL_Event evenementQuitter;
@@ -64,11 +91,13 @@ int main()
             }
         }
     }
-    LoggerMessageErreur(SDL_RenderClear(rendu) != 0, SDL_GetError());
-    // destruction du container
-    SDL_DestroyRenderer(rendu);
-    // destruction de la fenêtre
-    SDL_DestroyWindow(fenetre);
+
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_RenderClear(rendu) != 0,
+                              "Erreur de netoyage du container");
+    SDL_DestroyTexture(texture);
+    detruireContexte(fenetre, rendu);
     //liberer les ressources
     SDL_Quit();
 
