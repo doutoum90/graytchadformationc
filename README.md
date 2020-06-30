@@ -55,3 +55,5 @@
 ## [Leçon 26: Les structures de données: Les graphes (graphs)](docs/lecon26.md)
 
 ## [Leçon 27: Bibliothèque SDL](docs/lecon27.md)
+
+## [Leçon 28: Premiere fenêtre](docs/lecon28.md)
