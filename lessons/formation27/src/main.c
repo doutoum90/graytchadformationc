@@ -33,6 +33,7 @@ int main()
                               rendu,
                               texture == NULL,
                               "Erreur de la création texture en memoire");
+    SDL_FreeSurface(image);
     // charger la texture en memoire
     int largeur, hauteur;
     detruireContexteEtQuitter(fenetre,

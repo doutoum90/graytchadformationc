@@ -3,8 +3,8 @@
 #include <SDL2/SDL.h>
 #define COORDONNES_X 0
 #define COORDONNES_Y 0
-#define LARGEUR_FENETRE 800
-#define HAUTEUR_FENETRE 600
+#define LARGEUR_FENETRE 1280
+#define HAUTEUR_FENETRE 780
 #define LoggerMessageErreur(test, message)                     \
     {                                                          \
         if (test)                                              \
