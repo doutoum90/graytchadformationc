@@ -21,64 +21,38 @@ int main()
                                     &rendu) != 0,
         "Erreur de creation de la fenetre ou du container");
 
-    // creation de la surface (objet contenant l'image)
+    // creattion de la surface
     SDL_Surface *image = SDL_LoadBMP("src/gray.bmp");
     detruireContexteEtQuitter(fenetre,
                               rendu,
                               image == NULL,
-                              "Erreur chargement image");
-    // creation de la texture(parent de la surface)
-    SDL_Texture *texture = SDL_CreateTextureFromSurface(rendu, image);
+                              "Erreur de chargement de l'image dans la surface");
+
+    // creation de la texture
+    SDL_Texture *matexture = SDL_CreateTextureFromSurface(rendu, image);
     detruireContexteEtQuitter(fenetre,
                               rendu,
-                              texture == NULL,
-                              "Erreur de la création texture en memoire");
+                              matexture == NULL,
+                              "Erreur de création de la texture");
+    // destruction de la surface
     SDL_FreeSurface(image);
-    // charger la texture en memoire
-    int largeur, hauteur;
+
+    // chargement de la texture en memoire
+    int hauteur, largeur;
     detruireContexteEtQuitter(fenetre,
                               rendu,
-                              SDL_QueryTexture(texture,
-                                               NULL,
-                                               NULL,
-                                               &largeur,
-                                               &hauteur) != 0,
-                              "Erreur chargement texture en memoire");
+                              SDL_QueryTexture(matexture, NULL, NULL, &largeur, &hauteur) != 0,
+                              "Erreur de création de la texture");
 
-    // affichage de la texture
     SDL_Rect rect = {(LARGEUR_FENETRE - largeur) / 2, (HAUTEUR_FENETRE - hauteur) / 2, largeur, hauteur};
-    detruireContexteEtQuitter(fenetre,
-                              rendu,
-                              SDL_RenderCopy(rendu,
-                                             texture,
-                                             NULL,
-                                             &rect) != 0,
-                              "Erreur d'affichage de la texture");
-
-    // indiquer la couleur
-    /*     detruireContexteEtQuitter(fenetre,
-                              rendu,
-                              SDL_SetRenderDrawColor(rendu,
-                                                     255,
-                                                     255,
-                                                     255,
-                                                     255) != 0,
-                              "Erreur de changement de couleur pour le dessin"); */
-    /* 
-    SDL_Rect marectangle1 = {200, 300, 200, 100};
-    SDL_Rect marectangle2 = {500, 300, 200, 100};
 
     detruireContexteEtQuitter(fenetre,
                               rendu,
-                              SDL_RenderFillRect(rendu,
-                                                 &marectangle1) != 0,
-                              "Erreur de création du rectangle rempli");
-    detruireContexteEtQuitter(fenetre,
-                              rendu,
-                              SDL_RenderDrawRect(rendu,
-                                                 &marectangle2) != 0,
-                              "Erreur de création du rectangle");
- */
+                              SDL_RenderCopy(rendu, matexture, NULL, &rect) != 0,
+                              "Erreur de création de la texture");
+
+    // destruction de la texture
+    SDL_DestroyTexture(matexture);
     SDL_RenderPresent(rendu);
     bool etatDemarre = true;
     SDL_Event evenementQuitter;
@@ -97,7 +71,6 @@ int main()
                               rendu,
                               SDL_RenderClear(rendu) != 0,
                               "Erreur de netoyage du container");
-    SDL_DestroyTexture(texture);
     detruireContexte(fenetre, rendu);
     //liberer les ressources
     SDL_Quit();
