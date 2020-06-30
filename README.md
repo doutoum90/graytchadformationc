@@ -57,3 +57,5 @@
 ## [Leçon 27: Bibliothèque SDL](docs/lecon27.md)
 
 ## [Leçon 28: Premiere fenêtre](docs/lecon28.md)
+
+## [Leçon 29: Dessiner dans notre fenêtre](docs/lecon29.md)
