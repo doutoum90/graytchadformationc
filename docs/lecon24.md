@@ -1,7 +1,8 @@
 # Leçon C 24
+
 ## Les structures de données: Les Listes doublement chainées (DList)
 
-```mermaid
+``` mermaid
 graph LR; 
 pt_debut-->A;
 A-->B; B-->A;
@@ -12,16 +13,20 @@ pt_fin -->E;
 ```
 
 Exemple 
+
 * de  domaine d'utilisation: 
-	* Mathématiques appliquées
-	* ...
+  + Mathématiques appliquées
+  + ...
 * d'algorithme sur les  dlist:
-	* chaines de Markov
-	* machine à état fini
-	* ....
+  + chaines de Markov
+  + machine à état fini
+  + ....
+
 ## Lab 5: 
+
 Réalisation d'une D-liste chainés de réel.
 Implementer les opérations de 
+
 * créer d'une liste vide
 * savoir si la liste est vide ou non
 * ajouter un élément au debut

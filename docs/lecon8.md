@@ -1,13 +1,14 @@
 # Leçon C 8
-## Les Structures itératifs
 
+## Les Structures itératifs
 
 ### 1 - Boucle while
 
 ```c 
 while ( expression ) 
 	instruction;
-```
+
+``` 
 
 ou 
 ```c 
@@ -18,29 +19,30 @@ while ( expression ) {
 
 ### 2 - do-while
 
-```c
+``` c
 do{
 	instruction;
 	}
 while ( expression );
 ```
 
-```c
+``` c
 do{
 	liste d'instruction;
 }
 while ( expression );
 ```
+
 ### 3 - for
 
-
-```c
+``` c
 for ( intialisation ; condition ; incrementation) 
 	instruction;
 ```
 
 ou 
-```c
+
+``` c
 for ( intialisation ; condition ; incrementation) {
 	instruction;
 }
@@ -56,9 +58,9 @@ n!=n*(n-1)*(n-2)....*2*1
 3!=3*2*1=1*2*3=6
 4!=4*3!=24
 
-
 compilation d'un programme c:
-```
+
+``` 
 ```console
 foo@bar:~$ gcc nomfichier.c -> a.out
 foo@bar:~$ gcc nomfichier.c -o nomobjet ->nomobjet

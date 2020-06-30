@@ -1,18 +1,21 @@
 # Leçon C 15
+
 ## Les fichiers : entrées/sorties
 
-- persistance des données
+* persistance des données
 
-```c
+``` c
 FILE *fopen(const char *nomfichier, const char *modeOuverture);
 /*
 les differents mode ouverture de fichiers:
-- r : lecture seule (le fichier doit exister)
-- w : écriture seule
-- a : ajout à la fin de fichier
-- r+ : lecture et écriture (le fichier doit exister)
-- w+ : lecture et écriture (supprime le fichier)
-- a+ : ajout, lecture et écriture en fin de fichier
+
+* r : lecture seule (le fichier doit exister)
+* w : écriture seule
+* a : ajout à la fin de fichier
+* r+ : lecture et écriture (le fichier doit exister)
+* w+ : lecture et écriture (supprime le fichier)
+* a+ : ajout, lecture et écriture en fin de fichier
+
 */
 
 int fclose(FILE *);

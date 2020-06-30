@@ -1,8 +1,10 @@
 # Leçon C 22
+
 ## Les structures de données: [Les Files (Queue)](https://fr.wikipedia.org/wiki/File_(structure_de_données))
 
 FIFO: First In First Out
-```mermaid
+
+``` mermaid
 graph LR; 
 pt_debut-->A
 A-->B;
@@ -11,18 +13,22 @@ C-->D;
 D-->E;
 pt_fin -->E;
 ```
+
 Exemple 
+
 * de  domaine d'utilisation: 
-	* Ordonnanceur avec Stratégie FIFO
-	* ...
+  + Ordonnanceur avec Stratégie FIFO
+  + ...
 * d'algorithme sur les files:
-	* enqueue( ajout d'un élément en dernière position)
-	* dequeue (suppression du premier element ajouté)
-	* ....
+  + enqueue( ajout d'un élément en dernière position)
+  + dequeue (suppression du premier element ajouté)
+  + ....
 
 ## Lab 3: 
+
 Réalisation d'une file de réel.
 Implementer les opérations de 
+
 * créer d'une file vide
 * savoir si la file est vide ou non
 * d'enfiler un element

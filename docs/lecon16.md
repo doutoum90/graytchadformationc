@@ -1,9 +1,10 @@
 # Leçon C 16
+
 ## Les structures : definition de son type
 
 ### Les structures
 
-```c
+``` c
 struct maSuperStruct
 {
     int nomEntier;
@@ -20,7 +21,7 @@ pt_structure = &maSecondeStructureInitialise;
 // pt_structure->nombreReel ->2.5
 ```
 
-```c
+``` c
 typedef struct maSuperStruct
 {
     int nomEntier;
@@ -38,7 +39,7 @@ pt_structure = &maSecondeStructureInitialise;
 
 ### Les énumérations
 
-```c
+``` c
 enum Temperature
 {
     FRAIS, 
@@ -49,7 +50,7 @@ enum Temperature
 enum Temperature tempTchad = CHAUD;
 ```
 
-```c
+``` c
 typedef enum Temperature
 {
     FRAIS, 
@@ -62,7 +63,7 @@ Temperature tempTchad = CHAUD;
 
 ### Les unions
 
-```c
+``` c
 union type { 
 int entier; 
 double flottant; 

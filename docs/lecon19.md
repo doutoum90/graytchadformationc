@@ -1,19 +1,22 @@
 # Leçon C 19
+
 ## Les préprocesseurs
 
 ### Importation des bibliothèques 
+
 * Utilisateurs
 * Systèmes
 * Tierce
 
-```c
+``` c
 #include <stdio.h>
 #include "fonctions.h"
 #include <SDL/SDL2>
 ```
 
 ### définition des constantes globales
-```c
+
+``` c
 #define N 5
 ```
 
@@ -25,12 +28,12 @@
 #define PRODUIT (A *B)
 ```
 
-
 ### Pour éviter les dépendances circulaires
 
 on les mets dans .h
 exemple de fichier entête.h
-```c
+
+``` c
 #ifndef __ENTETE__H
 #define __ENTETE__H
 // declaration des variables

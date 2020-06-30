@@ -34,14 +34,17 @@ ax^2+bx+c = 0 où a, b, c sont reels.
 delta =b^2-4ac
 
 si delta > 0
+
     il existe deux solutions réelles distinctes
     x1 = (-b - sqrt(delta)) / 2 * a; 
 	x2 = (-b + sqrt(delta)) / 2 * a;
 
 sinon si delta == 0
+
     il existe une solution réelle double
 	x = -b / 2 * a;
 
 sinon
+
 	Il n'existe pas de solutions réelle.
 	

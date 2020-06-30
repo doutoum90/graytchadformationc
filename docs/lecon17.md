@@ -1,11 +1,12 @@
 # Leçon C 17
+
 ## Organisation d'un projet et makefile
 
 ### Organisation
-- le code source dans le dossier `src`
-- les objets dans le dossier `obj`
-- les executables(binaires) dans le dossier `bin`
 
+* le code source dans le dossier `src`
+* les objets dans le dossier `obj`
+* les executables(binaires) dans le dossier `bin`
 
 ### Makefile Avancé
 
@@ -15,6 +16,7 @@
 cible: dependances
 	commandes
 ```
+
 quelques variables utiles
 
 |||
@@ -26,7 +28,6 @@ quelques variables utiles
 |	$?		| liste dépendances plus récente que la cible|
 |	$*		| nom de fichier sans l'extension|
 
-
 Convention de nommage des variables
 
 |||
@@ -37,8 +38,6 @@ Convention de nommage des variables
 |	SRC		| le dossier source	|
 |	OBJ	| le dossier contenant les objets|
 |	BIN	| le dossier contenant les binaires|
-
-
 
 exemple de makefile
 

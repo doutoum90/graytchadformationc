@@ -59,3 +59,5 @@
 ## [Leçon 28: Premiere fenêtre](docs/lecon28.md)
 
 ## [Leçon 29: Dessiner dans notre fenêtre](docs/lecon29.md)
+
+## [Leçon 30: Dessiner dans notre fenêtre](docs/lecon30.md)

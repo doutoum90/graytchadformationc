@@ -1,12 +1,13 @@
 # Leçon C 14
+
 ## Gestion de la mémoire : Allocation dynamique
 
-
-C met à disposition quelques fonctions utilitaires pour la gestion de la memoire dans la bibliothèque `stdlib.h`. 
+C met à disposition quelques fonctions utilitaires pour la gestion de la memoire dans la bibliothèque `stdlib.h` . 
 
 A travers ces fonctions nous pouvons alloué de la memoire à la demande et la libéré à la fin du travaille.
 
 Nous utiliserons essentiellement ces 4 fonctions.
+
 ``` c
 void*  malloc(  size_t t  );
 /* 
@@ -31,6 +32,8 @@ libére la memoire pointée par le pointeur ptr
 */
 ```
 
-Nous aurons besoins d'utiliser également l'opérateur `sizeof`défini dans `stdio.h`. 
-- size_t size sizeof(type var)
+Nous aurons besoins d'utiliser également l'opérateur `sizeof` défini dans `stdio.h` . 
+
+* size_t size sizeof(type var)
+
 Elle retourne le nombre d'octet contenu dans la variable var.

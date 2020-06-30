@@ -2,11 +2,9 @@
 
 ## Les operations 
 
-### I- (=)L’affectation
- 
+### I- (=)L’affectation 
 
 ### II- arithmétiques
-
  
 1-(+) addition
 2- (-)soustraction

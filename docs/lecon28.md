@@ -1,14 +1,18 @@
 # Leçon C 28
+
 ## Premiere fenêtre
 
 [Initialisation](https://wiki.libsdl.org/SDL_Init)
+
 ``` c
 int SDL_Init(Uint32 flags)
 /**
 Initialise la library
 retourne
-- 0 s'il arrive à initialiser le programme
-- Un nombre negatif si erreur et (les details de l'erreur sont dispo si on appel la fonction SDL_GetError)
+
+* 0 s'il arrive à initialiser le programme
+* Un nombre negatif si erreur et (les details de l'erreur sont dispo si on appel la fonction SDL_GetError)
+
 */
 int SDL_InitSubSystem(Uint32 flags);
 // Il est possible d'utiliser la fonction ci-dessus un peu plus loin si besoin
@@ -30,7 +34,8 @@ les valeurs possible du flag sont définies dans ce tableau.
 |**SDL_INIT_NOPARACHUTE**|désactivation de signaux fatals|
 
 [Quitter le programme](https://wiki.libsdl.org/SDL_Quit)
-```c
+
+``` c
 void SDL_Quit();
 /**
 fait l'inverse de SDL_Init
@@ -38,14 +43,17 @@ fait l'inverse de SDL_Init
 ```
 
 [Logger un message](https://wiki.libsdl.org/SDL_Log)
-```c
+
+``` c
 void SDL_Log(const char* fmt, ...);
 /**
 logger une chaine de caractere en cas d'erreur
 */
 ```
+
 [Récuperer un message d'erreur](https://wiki.libsdl.org/SDL_GetError)
-```c
+
+``` c
 const char* SDL_GetError(void);
 /**
 retourne une chaine de caractere contenant le message d'erreur.
@@ -53,16 +61,19 @@ retourne une chaine de caractere contenant le message d'erreur.
 ```
 
 [définir une fenetre](https://wiki.libsdl.org/SDL_CreateWindow)
-```c
+
+``` c
 SDL_Window* SDL_CreateWindow(const char* title, int x, int y, int w, int h, Uint32 flags);
 /**
 creer et retourne une fenetre.
 les entrées sont
-- title pour le titre
-- x et y sont les coordonnées geographique sur lesquelles la fenetre se positionnera
-- w: (width) largeur de la fenetre
-- h: (height) hauteur de la fenetre
-- flags: mode d'ouverture
+
+* title pour le titre
+* x et y sont les coordonnées geographique sur lesquelles la fenetre se positionnera
+* w: (width) largeur de la fenetre
+* h: (height) hauteur de la fenetre
+* flags: mode d'ouverture
+
 ```
 
 les valeurs possible de flags sont définies dans la tableau si dessous
@@ -82,7 +93,7 @@ les valeurs possible de flags sont définies dans la tableau si dessous
 
 [destruction de la fenetre](https://wiki.libsdl.org/SDL_DestroyWindow)
 
-```c
+``` c
 void SDL_DestroyWindow(SDL_Window* window)
 /**
 detruit la fenetre window en parametre
@@ -91,13 +102,13 @@ detruit la fenetre window en parametre
 
 [attente inactive](https://wiki.libsdl.org/SDL_Delay)
 
-```c
+``` c
 void SDL_Delay(Uint32 ms);
 // attend ms milliseconds avant de quitter 
 ```
 
 [Evenement](https://wiki.libsdl.org/SDL_Event)
 
-```c
+``` c
 int SDL_PollEvent(SDL_Event* event);
 ```
