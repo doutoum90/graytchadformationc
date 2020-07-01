@@ -13,7 +13,7 @@ int main()
         SDL_Init(SDL_INIT_VIDEO) != 0,
         "Erreur de chargement de contexte");
     LoggerMessageErreur(
-        IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) != 0,
+        IMG_Init(0) != 0,
         "Erreur de chargement de la bibliotheque Image");
     // création de la fenetre et du container
     LoggerMessageErreur(
@@ -26,10 +26,14 @@ int main()
 
     // creattion de la surface
     SDL_Surface *image = IMG_Load("images/gray.jpeg");
-    /* SDL_Surface *image = SDL_LoadBMP("images/gray.bmp");*/
     detruireContexteEtQuitter(fenetre,
                               rendu,
                               image == NULL,
+                              "Erreur de chargement de l'image dans la surface");
+    SDL_Surface *image2 = IMG_Load("images/tchad.jpg");
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              image2 == NULL,
                               "Erreur de chargement de l'image dans la surface");
 
     // creation de la texture
@@ -38,25 +42,46 @@ int main()
                               rendu,
                               matexture == NULL,
                               "Erreur de création de la texture");
+    SDL_Texture *matexture2 = SDL_CreateTextureFromSurface(rendu, image2);
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              matexture2 == NULL,
+                              "Erreur de création de la texture");
     // destruction de la surface
     SDL_FreeSurface(image);
+    SDL_FreeSurface(image2);
 
     // chargement de la texture en memoire
     int hauteur, largeur;
+    SDL_Rect rect, rect2;
     detruireContexteEtQuitter(fenetre,
                               rendu,
-                              SDL_QueryTexture(matexture, NULL, NULL, &largeur, &hauteur) != 0,
+                              SDL_QueryTexture(matexture, NULL, NULL, &rect.w, &rect.h) != 0,
+                              "Erreur de création de la texture");
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_QueryTexture(matexture2, NULL, NULL, &rect2.w, &rect2.h) != 0,
                               "Erreur de création de la texture");
 
-    SDL_Rect rect = {(LARGEUR_FENETRE - largeur) / 2, (HAUTEUR_FENETRE - hauteur) / 2, largeur, hauteur};
+    rect.x = 0;
+    rect.y = 0;
+    rect2.x = (LARGEUR_FENETRE - largeur) / 2;
+    rect2.y = (HAUTEUR_FENETRE - hauteur) / 2;
+    rect2.h /=3;
+    rect2.w /=3;
 
     detruireContexteEtQuitter(fenetre,
                               rendu,
                               SDL_RenderCopy(rendu, matexture, NULL, &rect) != 0,
                               "Erreur de création de la texture");
+    detruireContexteEtQuitter(fenetre,
+                              rendu,
+                              SDL_RenderCopy(rendu, matexture2, NULL, &rect2) != 0,
+                              "Erreur de création de la texture");
 
     // destruction de la texture
     SDL_DestroyTexture(matexture);
+    SDL_DestroyTexture(matexture2);
     SDL_RenderPresent(rendu);
     bool etatDemarre = true;
     SDL_Event evenementQuitter;

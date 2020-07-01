@@ -1,7 +1,7 @@
 #ifndef __UTILITAIRE__H__
 #define __UTILITAIRE__H__
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_Image.h>
+#include <SDL2/SDL_image.h>
 #define COORDONNES_X 0
 #define COORDONNES_Y 0
 #define LARGEUR_FENETRE 1280
