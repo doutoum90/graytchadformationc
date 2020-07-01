@@ -61,3 +61,5 @@
 ## [Leçon 29: Dessiner dans notre fenêtre](docs/lecon29.md)
 
 ## [Leçon 30: Afficher notre premiere image](docs/lecon30.md)
+
+## [Leçon 31: Manipulation images divers](docs/lecon31.md)

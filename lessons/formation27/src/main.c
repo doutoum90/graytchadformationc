@@ -52,23 +52,19 @@ int main()
     SDL_FreeSurface(image2);
 
     // chargement de la texture en memoire
-    int hauteur, largeur;
-    SDL_Rect rect, rect2;
+    int hauteur, largeur, hauteur2, largeur2;
+    // SDL_Rect rect, rect2;
     detruireContexteEtQuitter(fenetre,
                               rendu,
-                              SDL_QueryTexture(matexture, NULL, NULL, &rect.w, &rect.h) != 0,
+                              SDL_QueryTexture(matexture, NULL, NULL, &largeur, &hauteur) != 0,
                               "Erreur de création de la texture");
     detruireContexteEtQuitter(fenetre,
                               rendu,
-                              SDL_QueryTexture(matexture2, NULL, NULL, &rect2.w, &rect2.h) != 0,
+                              SDL_QueryTexture(matexture2, NULL, NULL, &largeur2, &hauteur2) != 0,
                               "Erreur de création de la texture");
-
-    rect.x = 0;
-    rect.y = 0;
-    rect2.x = (LARGEUR_FENETRE - largeur) / 2;
-    rect2.y = (HAUTEUR_FENETRE - hauteur) / 2;
-    rect2.h /=3;
-    rect2.w /=3;
+    printf("h = %d l = %d", hauteur2, largeur2);
+    SDL_Rect rect = {0, 0, largeur, hauteur};
+    SDL_Rect rect2 = {(LARGEUR_FENETRE - largeur), (HAUTEUR_FENETRE - hauteur), largeur, hauteur};
 
     detruireContexteEtQuitter(fenetre,
                               rendu,
