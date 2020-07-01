@@ -12,6 +12,9 @@ int main()
     LoggerMessageErreur(
         SDL_Init(SDL_INIT_VIDEO) != 0,
         "Erreur de chargement de contexte");
+    LoggerMessageErreur(
+        IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) != 0,
+        "Erreur de chargement de la bibliotheque Image");
     // création de la fenetre et du container
     LoggerMessageErreur(
         SDL_CreateWindowAndRenderer(LARGEUR_FENETRE,
@@ -22,7 +25,8 @@ int main()
         "Erreur de creation de la fenetre ou du container");
 
     // creattion de la surface
-    SDL_Surface *image = SDL_LoadBMP("src/gray.bmp");
+    SDL_Surface *image = IMG_Load("images/gray.jpeg");
+    /* SDL_Surface *image = SDL_LoadBMP("images/gray.bmp");*/
     detruireContexteEtQuitter(fenetre,
                               rendu,
                               image == NULL,
@@ -74,6 +78,7 @@ int main()
     detruireContexte(fenetre, rendu);
     //liberer les ressources
     SDL_Quit();
+    IMG_Quit();
 
     return 0;
 }
