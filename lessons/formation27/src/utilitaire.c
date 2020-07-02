@@ -9,6 +9,8 @@ void detruireContexteEtQuitter(SDL_Window *fenetre, SDL_Renderer *rendu, unsigne
 }
 void detruireContexte(SDL_Window *fenetre, SDL_Renderer *rendu)
 {
+    // destruction de la lib TTF
+    TTF_Quit();
     // destruction du container
     SDL_DestroyRenderer(rendu);
     // destruction de la fenêtre

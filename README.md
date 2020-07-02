@@ -63,3 +63,5 @@
 ## [Leçon 30: Afficher notre premiere image](docs/lecon30.md)
 
 ## [Leçon 31: Manipulation images divers](docs/lecon31.md)
+
+## [Leçon 32: Gérer les événements SDL](docs/lecon32.md)
