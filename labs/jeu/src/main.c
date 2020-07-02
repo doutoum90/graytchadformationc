@@ -12,10 +12,9 @@ int main()
     LoggerMessageErreur(
         SDL_Init(SDL_INIT_VIDEO) != 0,
         "Erreur de chargement de contexte");
-    LoggerMessageErreur(TTF_Init() != 0, "Erreur de chargement de la bibliotheque TTF ")
-        LoggerMessageErreur(
-            IMG_Init(0) != 0,
-            "Erreur de chargement de la bibliotheque Image");
+    LoggerMessageErreur(
+        IMG_Init(0) != 0,
+        "Erreur de chargement de la bibliotheque Image");
     // création de la fenetre et du container
     LoggerMessageErreur(
         SDL_CreateWindowAndRenderer(LARGEUR_FENETRE,
