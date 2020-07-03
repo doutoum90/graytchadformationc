@@ -65,3 +65,5 @@
 ## [Leçon 31: Manipulation images divers](docs/lecon31.md)
 
 ## [Leçon 32: Gérer les événements SDL](docs/lecon32.md)
+
+## [Leçon 33: PostgreSQL](docs/lecon33.md)
