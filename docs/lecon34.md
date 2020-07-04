@@ -1,5 +1,5 @@
 # Leçon C 34
-## Connexion à un BDD Postgresql
+## Connexion à une BDD Postgresql
 
 ```console
 gem install pg
