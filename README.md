@@ -67,3 +67,5 @@
 ## [Leçon 32: Gérer les événements SDL](docs/lecon32.md)
 
 ## [Leçon 33: PostgreSQL](docs/lecon33.md)
+
+## [Leçon 34: Connexion à un BDD Postgresql](docs/lecon34.md)
