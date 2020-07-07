@@ -70,6 +70,8 @@
 
 ## [Leçon 34: Connexion à une BDD Postgresql](docs/lecon34.md)
 
+## [Leçon 35: Programmation systeme](docs/lecon35.md)
+
 ## [Leçon 36: Les processus](docs/lecon36.md)
 
 ## [Leçon 37:  Les pipes (tubes)](docs/lecon37.md)
