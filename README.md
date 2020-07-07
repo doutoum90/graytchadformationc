@@ -69,3 +69,5 @@
 ## [Leçon 33: PostgreSQL](docs/lecon33.md)
 
 ## [Leçon 34: Connexion à une BDD Postgresql](docs/lecon34.md)
+
+## [Leçon 36:  Les processus](docs/lecon36.md)
