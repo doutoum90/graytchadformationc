@@ -17,13 +17,13 @@ all :$(EXEC)
 
 %.o : %.c
 	@echo "géneration de l'oject $(patsubst $(SRCDIR)/%,$(OBJDIR)/%, $@) depuis ce code $< "
-	$(CC) -o $(patsubst $(SRCDIR)/%,$(OBJDIR)/%, $@) -c $< -I $(INCDIR)
+	$(CC) -o $(patsubst $(SRCDIR)/%,$(OBJDIR)/%, $@) -c $< -I $(INCDIR) -lpthread
 
 
 
 $(EXEC) : $(_OBJ)
 	@echo "géneration de l'executable depuis le $(patsubst %,$(BINDIR)/%, $@) les dependances $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$^) "
-	$(CC) -o $(patsubst %,$(BINDIR)/%, $@) $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$^) -I $(INCDIR)
+	$(CC) -o $(patsubst %,$(BINDIR)/%, $@) $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$^) -I $(INCDIR) -lpthread
 
 clean :
 	rm -rf obj/*.o
