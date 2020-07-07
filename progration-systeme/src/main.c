@@ -1,15 +1,77 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include <pthread.h>
+
+/* int somme(int a, int b)
+{
+    return a + b;
+}
+int mutl(int a, int b)
+{
+    return a * b;
+} */
+
+int compteur = 0, compteurfnt1 = 0, compteurfnt2 = 0;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t condition = PTHREAD_COND_INITIALIZER;
+
+void *function1(void *args)
+{
+    printf("Hello fonction 1\n");
+    int j;
+
+    while (compteurfnt1 < 100000)
+    {
+        pthread_mutex_lock(&mutex);
+        // pthread_cond_wait(&condition, &mutex);
+        compteurfnt1++;
+        compteur++;
+        if (compteurfnt1 % 1000 == 0)
+        {
+            pthread_cond_wait(&condition, &mutex); // endormir le thread        
+        }
+        pthread_cond_signal(&condition);// reveiller les threads en attente
+        pthread_mutex_unlock(&mutex);// liberation thread
+    }
+
+    pthread_mutex_destroy(&mutex);
+    pthread_exit(NULL);
+}
+
+void *function2(void *args)
+{
+    printf("Hello fonction 2\n");
+    int j;
+
+    while (compteurfnt2 < 100000)
+    {
+        pthread_mutex_lock(&mutex);
+        compteurfnt2++;
+        compteur++;
+        if (compteurfnt2 % 1000 == 0)
+        {
+            pthread_cond_wait(&condition, &mutex); // endormir le thread        
+        }
+        pthread_cond_signal(&condition);// reveiller les threads en attente
+        pthread_mutex_unlock(&mutex);// liberation thread
+    }
+    pthread_mutex_destroy(&mutex);
+    pthread_exit(NULL);
+}
 
 int main(int argc, char **argv)
 {
+    /*  int(*pt_fonc[2])(int, int);
+    pt_fonc[0] =&somme;
+    pt_fonc[1] =&mutl;
+    int i;
+    for( i= 0; i<2; i++)
+        printf("%d  %d = %d\n", 3, 5, pt_fonc[i](3, 5)); */
     /*  int pid = (int)getpid();
     int ppid = (int) getppid(); */
     // printf("le pid du processus courant %d et celui de son pere est %d\n", pid, ppid);
     // creation du tube
-    int desc[2], desc2[2];
+    /*  int desc[2], desc2[2];
     char salutation[] = "Bonjour mon fils\n";
     char lireSalutation[100], lireReponseFils[100];
     if (pipe(desc) != 0 || pipe(desc2) != 0)
@@ -42,5 +104,15 @@ int main(int argc, char **argv)
         // printf("dans le processus pere, le pid du pere est %d, le pid du fils %d\n", (int)getpid(), pidfils);
         wait(NULL);
         break;
+    } */
+    pthread_t thread1, thread2;
+    if (pthread_create(&thread1, NULL, function1, NULL) != 0 || pthread_create(&thread2, NULL, function2, NULL) != 0)
+    {
+        fprintf(stderr, "Erreur de création de thread\n");
     }
+
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+
+    printf("%d", compteur);
 }
