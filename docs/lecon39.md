@@ -17,7 +17,7 @@ Bibliothèques :
 Affichage Kernel :
 
 ``` c
-printk(KERN_ALERT "",__FUNCTION__);
+printk(KERN_ALERT "%s",__FUNCTION__);
 ```
 
 modules de chargement et de déchargement
@@ -38,18 +38,16 @@ module_exit(simple_module_exit);
 compilation : 
 
 ``` Makefile
-obj-m += hello-1.o
-
+obj-m += driver.o
 all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
-
+	make -C /usr/src/linux-headers-$(shell uname -r) M=$(shell pwd) modules
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C /usr/src/linux-headers-$(shell uname -r) M=$(shell pwd) clean
 ```
 
 * on utilise la commande `make` pour compiler.
 
-* Pour charger le module `sudo insmod hello.ko # ou sudo modprobe hello`
-* les messages sont logés dans `/var/log/messages` et donc  pour les voir `tail -f /var/log/messages` .
+* Pour charger le module `sudo insmod driver.ko # ou sudo modprobe driver`
+* les messages sont logés dans `/var/log/syslog` et donc  pour les voir `tail -f /var/log/syslog` .
 
-* pour supprimer le module `rmmod hello`
+* pour supprimer le module `sudo rmmod driver.ko`
