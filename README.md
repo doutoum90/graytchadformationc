@@ -79,3 +79,5 @@
 ## [Leçon 38:  Les threads (processus léger)](docs/lecon38.md)
 
 ## [Leçon 39:  Les drivers](docs/lecon39.md)
+
+## [Leçon 40:  Conclusion](docs/lecon40.md)

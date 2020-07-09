@@ -1,3 +1,4 @@
 # Leçon C 35
-## Programmation systeme
+## Programmation système
 
+### mode noyau et mode utilisateur
